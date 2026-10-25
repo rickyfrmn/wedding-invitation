@@ -121,16 +121,6 @@ export default function Home() {
               <div className="orn-side-branch orn-side-left" aria-hidden="true" />
               <div className="orn-side-branch orn-side-right" aria-hidden="true" />
 
-              <p className="eyebrow gold-text">
-                DUA HATI, SATU JANJI
-              </p>
-
-              <h2 className="section-title">
-                Kedua Mempelai
-              </h2>
-
-              <SectionDivider />
-
               {/* QS. AR-RUM AYAT 21 */}
               <div className="quran-verse">
                 <div
@@ -168,6 +158,17 @@ export default function Home() {
                   QS. Ar-Rum: 21
                 </p>
               </div>
+
+              <p className="eyebrow gold-text">
+                DUA HATI, SATU JANJI
+              </p>
+
+              <h2 className="section-title">
+                Kedua Mempelai
+              </h2>
+
+              <SectionDivider />
+
 
               {/* FOTO DAN PROFIL MEMPELAI */}
               <div className="couple-people">
@@ -209,49 +210,12 @@ export default function Home() {
               <div className="photo-gradient" />
 
               <div className="interlude-words">
-                <span>OUR STORY</span>
+                {/* <span>OUR STORY</span> */}
               </div>
             </section>
           </Reveal>
 
-          {/* COUNTDOWN */}
-          <Reveal>
-            <section className="countdown-section panel-dark ornate-section ornate-section-dark">
-              <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
-              <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
-              <div className="orn-gunungan-watermark orn-gunungan-left" aria-hidden="true" />
-              <div className="orn-gunungan-watermark orn-gunungan-right" aria-hidden="true" />
-
-              <p className="eyebrow gold-text">
-                SAVE THE DATE
-              </p>
-
-              <h2 className="section-title">
-                Menuju Hari Bahagia
-              </h2>
-
-              <SectionDivider />
-
-              <div className="countdown-grid">
-                {["Hari", "Jam", "Menit", "Detik"].map(
-                  (label, i) => (
-                    <div
-                      className="count-box"
-                      key={label}
-                    >
-                      <b>
-                        {String(
-                          countdown?.[i] ?? 0
-                        ).padStart(2, "0")}
-                      </b>
-
-                      <span>{label}</span>
-                    </div>
-                  )
-                )}
-              </div>
-            </section>
-          </Reveal>
+          
 
           {/* AKAD NIKAH */}
           <Reveal>
@@ -303,6 +267,45 @@ export default function Home() {
           {/* GALERI */}
           <Reveal>
             <GalleryLightbox />
+          </Reveal>
+
+          {/* COUNTDOWN */}
+          <Reveal>
+            <section className="countdown-section panel-dark ornate-section ornate-section-dark">
+              <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
+              <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
+              <div className="orn-gunungan-watermark orn-gunungan-left" aria-hidden="true" />
+              <div className="orn-gunungan-watermark orn-gunungan-right" aria-hidden="true" />
+
+              <p className="eyebrow gold-text">
+                SAVE THE DATE
+              </p>
+
+              <h2 className="section-title">
+                Menuju Hari Bahagia
+              </h2>
+
+              <SectionDivider />
+
+              <div className="countdown-grid">
+                {["Hari", "Jam", "Menit", "Detik"].map(
+                  (label, i) => (
+                    <div
+                      className="count-box"
+                      key={label}
+                    >
+                      <b>
+                        {String(
+                          countdown?.[i] ?? 0
+                        ).padStart(2, "0")}
+                      </b>
+
+                      <span>{label}</span>
+                    </div>
+                  )
+                )}
+              </div>
+            </section>
           </Reveal>
 
           {/* KONFIRMASI KEHADIRAN */}
