@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 
 const photos = [
@@ -81,7 +82,7 @@ export default function GalleryLightbox() {
           </button>
         ))}
       </div>
-      {open && activeIndex !== null && (
+      {open && activeIndex !== null && createPortal(
         <div
           className="lightbox-overlay"
           role="dialog"
@@ -99,12 +100,34 @@ export default function GalleryLightbox() {
         >
           <button ref={closeButtonRef} type="button" className="lightbox-close" onClick={closePhoto} aria-label="Tutup galeri">×</button>
           <button type="button" className="lightbox-nav lightbox-prev" onClick={() => goTo(-1)} aria-label="Foto sebelumnya">‹</button>
-          <div className="lightbox-photo-wrap" key={activeIndex}>
-            <Image src={photos[activeIndex].src} alt={photos[activeIndex].alt} fill sizes="100vw" className="lightbox-photo" priority />
-          </div>
+          <div
+  className="lightbox-photo-wrap"
+  key={activeIndex}
+  style={{
+    position: "relative",
+    width: "min(85vw, 1000px)",
+    height: "85dvh",
+    maxHeight: "85dvh",
+    margin: "auto",
+  }}
+>
+  <Image
+    src={photos[activeIndex].src}
+    alt={photos[activeIndex].alt}
+    fill
+    sizes="85vw"
+    className="lightbox-photo"
+    style={{
+      objectFit: "contain",
+      objectPosition: "center",
+    }}
+    unoptimized
+  />
+</div>
           <button type="button" className="lightbox-nav lightbox-next" onClick={() => goTo(1)} aria-label="Foto berikutnya">›</button>
           <p className="lightbox-counter">{activeIndex + 1} / {photos.length}</p>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

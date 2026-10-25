@@ -18,3 +18,40 @@
 @keyframes lb-zoom { from {opacity:.5; transform:scale(.97)} to {opacity:1; transform:scale(1)} }
 @media (max-width:700px) { .lightbox-overlay { padding:70px 12px; } .lightbox-nav { width:36px; height:36px; font-size:32px; top:auto; bottom:16px; transform:none; } .lightbox-prev {left:15px} .lightbox-next{right:15px} .lightbox-close{top:15px;right:15px} .gallery-grid .gallery-photo-button:last-child {grid-column:span 2;width:min(100%,320px);margin:auto} }
 @media (prefers-reduced-motion:reduce) { .lightbox-overlay,.lightbox-photo-wrap,.gallery-grid .gallery-photo-button img { animation:none; transition:none; } }
+
+/* Fullscreen gallery: rendered at document.body to avoid transformed scroll wrappers */
+body > .lightbox-overlay { position:fixed !important; inset:0 !important; width:100vw; height:100dvh; max-width:none; max-height:none; margin:0; z-index:2147483000; box-sizing:border-box; }
+body > .lightbox-overlay .lightbox-photo-wrap { min-height:0; height:100%; }
+/* Perbaikan tampilan foto fullscreen */
+body > .lightbox-overlay {
+  position: fixed !important;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 9, 9, 0.96);
+  box-sizing: border-box;
+}
+
+body > .lightbox-overlay .lightbox-photo-wrap {
+  position: relative !important;
+  width: min(85vw, 1000px);
+  height: 85dvh;
+  max-height: 85dvh;
+  flex-shrink: 0;
+}
+
+body > .lightbox-overlay .lightbox-photo {
+  object-fit: contain !important;
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  body > .lightbox-overlay .lightbox-photo-wrap {
+    width: 92vw;
+    height: 75dvh;
+  }
+}

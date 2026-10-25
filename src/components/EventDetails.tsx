@@ -2,43 +2,43 @@
 import { wedding } from "@/data/wedding";
 
 export default function EventDetails() {
-  const events = [
-    wedding.akad,
-    wedding.resepsi,
-  ];
+  const events = [wedding.akad];
 
   return (
-    <section className="bg-[#38251F] px-6 py-20 text-center text-[#F5EBDC]">
-      <h2 className="font-serif text-4xl text-[#B59457]">
+    <section className="event-section panel-cream" id="acara">
+      <p className="eyebrow gold-text">
+        WEDDING EVENTS
+      </p>
+
+      <h2 className="section-title">
         Rangkaian Acara
       </h2>
 
-      <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+      <div className="event-grid">
         {events.map((event) => (
-          <article
-            key={event.title}
-            className="rounded-t-[5rem] border border-[#B59457] p-8"
-          >
-            <h3 className="font-serif text-3xl text-[#B59457]">
-              {event.title}
-            </h3>
+          <article className="event-card" key={event.title}>
+            <div className="symbol">❦</div>
 
-            <p className="mt-6">{wedding.dateLabel}</p>
-            <p className="mt-3 font-semibold">{event.time}</p>
-            <p className="mt-6">{event.location}</p>
-            <p className="mt-2 text-sm">{event.address}</p>
+            <h3>{event.title}</h3>
 
-            <a
-              href={wedding.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-[#B59457] px-6 py-3 text-sm font-semibold text-[#38251F]"
-            >
-              Lihat Lokasi
-            </a>
+            <p>{wedding.dateLabel}</p>
+
+            <strong>{event.time}</strong>
+
+            <p>{event.location}</p>
+            <p>{event.address}</p>
           </article>
         ))}
       </div>
+
+      <a
+        href={wedding.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="dark-button"
+      >
+        Lihat Lokasi di Google Maps ↗
+      </a>
     </section>
   );
 }

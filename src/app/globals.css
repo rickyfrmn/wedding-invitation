@@ -55,3 +55,6 @@
 .wedding-music-toggle.is-playing span{animation:musicPulse 2.1s ease-in-out infinite;}
 @keyframes musicPulse{50%{transform:scale(1.18)}}
 @media(prefers-reduced-motion:reduce){.wedding-music-toggle.is-playing span{animation:none}}
+
+/* Only one event card remains: center it on desktop and mobile. */
+.event-section .event-grid { grid-template-columns:minmax(0, 1fr); max-width:480px; margin-inline:auto; }
