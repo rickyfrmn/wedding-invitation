@@ -36,7 +36,7 @@ export default function OpeningSection() {
             <Image src="/images/gallery.webp" alt="Nazil Romadhoni dan Tiara Faika Suci mengenakan busana tradisional Jawa" fill sizes="(max-width: 768px) 85vw, 390px" className="object-cover object-[center_38%]" />
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/35 to-transparent" />
           </div>
-          <p className="mt-7 text-center font-serif text-sm tracking-[0.2em] text-[#c6a56a]">BERSAMA DALAM SATU JANJI</p>
+          <p className="mt-7 text-center font-serif text-sm tracking-[0.2em] text-[#c6a56a]"></p>
         </div>
       </div>
     </section>
