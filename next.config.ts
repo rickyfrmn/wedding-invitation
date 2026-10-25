@@ -1,12 +1,18 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Menghilangkan logo N Next.js
+  devIndicators: false,
+
+  // Konfigurasi asli tetap dipertahankan
   experimental: {
     agentFeedback: true,
   },
+
   cacheComponents: true,
   partialPrefetching: true,
+
   turbopack: {
     rules: {
       "*.css": {

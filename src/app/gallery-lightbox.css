@@ -1,0 +1,20 @@
+.gallery-hint { color: #d4c2a8; font-size: 14px; margin: -5px 0 20px; }
+.gallery-grid .gallery-photo-button { position: relative; width: 100%; background: transparent; border: 0; padding: 0; cursor: zoom-in; overflow: hidden; border-radius: 90px 90px 8px 8px; }
+.gallery-grid .gallery-photo-button img { transition: transform .5s ease, filter .5s ease; }
+.gallery-grid .gallery-photo-button:hover img { transform: scale(1.035); filter: brightness(.92); }
+.gallery-photo-button:focus-visible { outline: 3px solid #c6a56a; outline-offset: 5px; }
+.gallery-zoom-icon { position:absolute; right:15px; bottom:15px; display:grid; place-items:center; width:35px; height:35px; color:white; background:rgba(0,0,0,.55); border:1px solid #c6a56a; border-radius:50%; font-size:22px; }
+.lightbox-overlay { position:fixed; inset:0; z-index:9999; background:rgba(12,10,10,.96); display:flex; align-items:center; justify-content:center; padding:70px 60px; animation:lb-fade .22s ease both; color:#f5ebdd; touch-action:pan-y; }
+.lightbox-photo-wrap { position:relative; width:min(100%,950px); height:100%; animation:lb-zoom .25s ease both; }
+.lightbox-photo { object-fit:contain; }
+.lightbox-close, .lightbox-nav { position:absolute; z-index:2; border:1px solid rgba(198,165,106,.55); background:rgba(30,24,22,.8); color:#f5ebdd; display:grid; place-items:center; border-radius:50%; line-height:1; }
+.lightbox-close { top:18px; right:22px; width:44px; height:44px; font-size:30px; }
+.lightbox-nav { top:50%; transform:translateY(-50%); width:46px; height:46px; font-size:42px; }
+.lightbox-prev { left:18px; } .lightbox-next { right:18px; }
+.lightbox-close:hover, .lightbox-nav:hover { background:#967442; }
+.lightbox-close:focus-visible, .lightbox-nav:focus-visible { outline:2px solid white; outline-offset:3px; }
+.lightbox-counter { position:absolute; bottom:17px; left:50%; transform:translateX(-50%); color:#d7bb84; letter-spacing:.18em; font-size:13px; }
+@keyframes lb-fade { from {opacity:0} to {opacity:1} }
+@keyframes lb-zoom { from {opacity:.5; transform:scale(.97)} to {opacity:1; transform:scale(1)} }
+@media (max-width:700px) { .lightbox-overlay { padding:70px 12px; } .lightbox-nav { width:36px; height:36px; font-size:32px; top:auto; bottom:16px; transform:none; } .lightbox-prev {left:15px} .lightbox-next{right:15px} .lightbox-close{top:15px;right:15px} .gallery-grid .gallery-photo-button:last-child {grid-column:span 2;width:min(100%,320px);margin:auto} }
+@media (prefers-reduced-motion:reduce) { .lightbox-overlay,.lightbox-photo-wrap,.gallery-grid .gallery-photo-button img { animation:none; transition:none; } }
