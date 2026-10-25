@@ -14,10 +14,10 @@ export default function Couple() {
 
       <div className="mx-auto mt-12 max-w-md">
         <h3 className="font-serif text-4xl text-[#B59457]">
-          {wedding.groom.fullName}
+          {wedding.groomFull}
         </h3>
         <p className="mt-3 text-sm leading-relaxed">
-          {wedding.groom.parents}
+          {wedding.groomParents}
         </p>
 
         <p className="my-12 font-serif text-5xl text-[#B59457]">
@@ -25,10 +25,10 @@ export default function Couple() {
         </p>
 
         <h3 className="font-serif text-4xl text-[#B59457]">
-          {wedding.bride.fullName}
+          {wedding.brideFull}
         </h3>
         <p className="mt-3 text-sm leading-relaxed">
-          {wedding.bride.parents}
+          {wedding.brideParents}
         </p>
       </div>
     </section>

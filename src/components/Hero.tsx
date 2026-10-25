@@ -13,9 +13,9 @@ export default function Hero() {
       </div>
 
       <h1 className="font-serif text-6xl leading-tight text-[#38251F]">
-        {wedding.groom.name}
+        {wedding.groom}
         <span className="block text-[#B59457]">&</span>
-        {wedding.bride.name}
+        {wedding.bride}
       </h1>
 
       <p className="mt-8 text-lg text-[#754B40]">

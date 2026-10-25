@@ -48,3 +48,10 @@
   .rsvp-section .section-title,.wishes-section .section-title {font-size: 44px;}
   .rsvp-section .form-card,.wishes-section .wish-board {border-radius: 16px;}
 }
+
+/* Wedding background music: always above photo and form content */
+.wedding-music-toggle{position:fixed;bottom:max(22px,env(safe-area-inset-bottom));right:22px;z-index:9999;display:grid;place-items:center;width:54px;height:54px;border:1px solid #c6a56a;border-radius:50%;background:#211b19ee;color:#f9f0e3;font:normal 27px Georgia,serif;box-shadow:0 8px 24px #0005;transition:transform .25s ease,background .25s ease;}
+.wedding-music-toggle:hover{transform:scale(1.08);background:#3c3028;}
+.wedding-music-toggle.is-playing span{animation:musicPulse 2.1s ease-in-out infinite;}
+@keyframes musicPulse{50%{transform:scale(1.18)}}
+@media(prefers-reduced-motion:reduce){.wedding-music-toggle.is-playing span{animation:none}}

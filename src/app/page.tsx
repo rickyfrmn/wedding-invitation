@@ -2,7 +2,8 @@
 import Image from "next/image";
 import "./animations.css";
 import "./gallery-lightbox.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import MusicPlayer, { type MusicPlayerHandle } from "@/components/MusicPlayer";
 import Cover from "@/components/Cover";
 import OpeningSection from "@/components/OpeningSection";
 import Reveal from "@/components/Reveal";
@@ -16,11 +17,13 @@ function timeLeft(): number[] {
  return [Math.floor(diff/86400000),Math.floor((diff/3600000)%24),Math.floor((diff/60000)%60),Math.floor((diff/1000)%60)];
 }
 export default function Home(){
+ const musicRef = useRef<MusicPlayerHandle>(null);
  const [opened,setOpened]=useState(false);const [countdown,setCountdown]=useState<number[]|null>(null);
- useEffect(()=>{const update=()=>setCountdown(timeLeft());update();const timer=window.setInterval(update,1000);return ()=>window.clearInterval(timer);},[]);
+ useEffect(()=>{const update=()=>setCountdown(timeLeft());const timer=window.setInterval(update,1000);return ()=>window.clearInterval(timer);},[]);
  return <main className="invitation">
+ <MusicPlayer ref={musicRef} opened={opened} />
  {!opened ? (
-   <Cover onOpen={() => { setOpened(true); window.scrollTo({ top: 0, behavior: "instant" }); }} />
+   <Cover onStartMusic={() => musicRef.current?.play()} onOpen={() => { setOpened(true); window.scrollTo({ top: 0, behavior: "instant" }); }} />
  ) : <>
   <OpeningSection />
   <Reveal><section className="couple-section panel-cream" id="couple"><p className="eyebrow gold-text">DUA HATI, SATU JANJI</p><h2 className="section-title">Kedua Mempelai</h2><div className="symbol">❧</div><h3>{wedding.groomFull}</h3><p>{wedding.groomParents}</p><div className="ampersand">&amp;</div><h3>{wedding.brideFull}</h3><p>{wedding.brideParents}</p></section></Reveal>

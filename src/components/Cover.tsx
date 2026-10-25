@@ -1,26 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useGuestName } from "@/lib/useGuestName";
 import { wedding } from "@/data/wedding";
 
-type CoverProps = { onOpen: () => void };
+type CoverProps = { onOpen: () => void; onStartMusic?: () => void };
 
-export default function Cover({ onOpen }: CoverProps) {
-  const [guest, setGuest] = useState("Tamu Undangan");
+export default function Cover({ onOpen, onStartMusic }: CoverProps) {
+  const guest = useGuestName();
   const [leaving, setLeaving] = useState(false);
 
   function handleOpen() {
     if (leaving) return;
+    onStartMusic?.();
     setLeaving(true);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.setTimeout(onOpen, reduceMotion ? 0 : 650);
   }
 
-  useEffect(() => {
-    const name = new URLSearchParams(window.location.search).get("to")?.trim();
-    if (name) setGuest(name.slice(0, 80));
-  }, []);
 
   return (
     <section className={`cover-screen animated-cover ${leaving ? "cover-leaving" : ""}`}>

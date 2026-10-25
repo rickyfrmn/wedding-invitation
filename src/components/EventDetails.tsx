@@ -3,8 +3,8 @@ import { wedding } from "@/data/wedding";
 
 export default function EventDetails() {
   const events = [
-    { title: "Akad Nikah", ...wedding.akad },
-    { title: "Resepsi", ...wedding.resepsi },
+    wedding.akad,
+    wedding.resepsi,
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function EventDetails() {
 
             <p className="mt-6">{wedding.dateLabel}</p>
             <p className="mt-3 font-semibold">{event.time}</p>
-            <p className="mt-6">{event.place}</p>
+            <p className="mt-6">{event.location}</p>
             <p className="mt-2 text-sm">{event.address}</p>
 
             <a

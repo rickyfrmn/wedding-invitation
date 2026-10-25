@@ -7,7 +7,7 @@ import { wedding } from "@/data/wedding";
 function getRemainingTime() {
   const distance = Math.max(
     0,
-    new Date(wedding.date).getTime() - Date.now()
+    new Date(wedding.dateISO).getTime() - Date.now()
   );
 
   return {
@@ -25,8 +25,6 @@ export default function Countdown() {
 
   useEffect(() => {
     const update = () => setTime(getRemainingTime());
-    update();
-
     const timer = window.setInterval(update, 1000);
     return () => window.clearInterval(timer);
   }, []);
