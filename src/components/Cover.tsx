@@ -28,8 +28,11 @@ export default function Cover({ onOpen, onStartMusic }: CoverProps) {
       </div>
       <div className="cover-shade" />
       <div className="gold-frame" aria-hidden="true"><span>✦</span></div>
+      <div className="ornamental-cover-arch" aria-hidden="true" />
+      <div className="ornamental-gunungan ornamental-gunungan-left" aria-hidden="true" />
+      <div className="ornamental-gunungan ornamental-gunungan-right" aria-hidden="true" />
       <div className="cover-content">
-        <div className="ornament">❦</div>
+        <div className="wedding-monogram" aria-label="Monogram NT">N<span>T</span></div>
         <p className="eyebrow">THE WEDDING OF</p>
         <h1>{wedding.groom} <em>&amp;</em> {wedding.bride}</h1>
         <p className="cover-date">{wedding.dateLabel}</p>

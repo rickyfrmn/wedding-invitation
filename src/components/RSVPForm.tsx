@@ -21,8 +21,13 @@ export default function RSVPForm() {
     } catch (err) { setNotice(err instanceof Error ? err.message : "Terjadi kesalahan."); }
     finally { setBusy(false); }
   }
-  return <section className="rsvp-section panel-cream" id="rsvp">
+  return <section className="rsvp-section panel-cream ornate-section ornate-section-cream" id="rsvp">
+    <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
+    <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
+    <div className="orn-side-branch orn-side-left" aria-hidden="true" />
+    <div className="orn-side-branch orn-side-right" aria-hidden="true" />
     <p className="eyebrow gold-text">KONFIRMASI KEHADIRAN</p><h2 className="section-title">RSVP</h2>
+    <div className="section-divider" aria-hidden="true"><span className="section-divider-line" /><span className="section-divider-mark">❦</span><span className="section-divider-line" /></div>
     <p className="section-intro">Mohon berkenan mengonfirmasi kehadiran Anda.</p>
     <form className="form-card" onSubmit={submit}>
       <label>Nama tamu<input maxLength={80} required value={name ?? (guestNameFromUrl === "Tamu Undangan" ? "" : guestNameFromUrl)} onChange={e => setName(e.target.value)} placeholder="Nama Anda" /></label>

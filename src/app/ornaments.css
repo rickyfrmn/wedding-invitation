@@ -1,0 +1,72 @@
+/* Dekorasi tambahan, mandiri dari Tailwind dan tidak mengganggu komponen form. */
+.cover-screen{overflow:hidden}
+.ornamental-cover-arch{position:absolute;z-index:-1;top:2%;left:50%;transform:translateX(-50%);width:min(730px,94vw);height:96%;background:url('/ornaments/floral-arch.svg') center center/100% 100% no-repeat;opacity:.64;pointer-events:none;filter:drop-shadow(0 0 12px rgba(0,0,0,.35));animation:archReveal 1.7s ease-out both}
+.ornamental-gunungan{position:absolute;z-index:-1;bottom:13px;width:clamp(65px,13vw,170px);height:clamp(110px,23vw,260px);background:url('/ornaments/botanical-bouquet.svg') center/contain no-repeat;opacity:.8;pointer-events:none}
+.ornamental-gunungan-left{left:max(13px,5vw)}.ornamental-gunungan-right{right:max(13px,5vw);transform:scaleX(-1)}
+.wedding-monogram{width:max-content;margin:0 auto 27px;color:#e6ce9d;font:italic 72px/.95 Georgia,serif;letter-spacing:-.16em;padding-right:12px;text-shadow:0 2px 8px #0009}.wedding-monogram span{font-size:.78em;position:relative;top:13px;left:3px}
+.cover-content{position:relative;padding:25px 10px}.cover-content h1{text-wrap:balance}
+.ornamental-opening-bloom{position:absolute;inset:4% auto 4% -220px;width:min(530px,54vw);background:url('/ornaments/floral-corner.svg') center/contain no-repeat;opacity:.12;pointer-events:none;transform:rotate(-12deg)}
+.ornamental-closing{isolation:isolate;overflow:hidden}.ornamental-closing-gunungan{position:absolute;z-index:-1;width:185px;height:295px;bottom:-48px;right:3%;background:url('/ornaments/botanical-bouquet.svg') center/contain no-repeat;opacity:.17;pointer-events:none}
+@keyframes archReveal{from{opacity:0;transform:translate(-50%,22px) scale(.98)}to{opacity:.64;transform:translate(-50%,0) scale(1)}}
+@media(max-width:700px){.ornamental-cover-arch{width:118vw;max-width:none;top:5%;height:88%;opacity:.42}.ornamental-gunungan{width:75px;height:126px;bottom:18px;opacity:.55}.ornamental-gunungan-left{left:11px}.ornamental-gunungan-right{right:11px}.wedding-monogram{font-size:55px;margin-bottom:22px}.ornamental-opening-bloom{width:300px;left:-170px}}
+@media(prefers-reduced-motion:reduce){.ornamental-cover-arch{animation:none}}
+
+
+/* Section ornaments for couple, events, gallery, RSVP, wishes, and closing */
+.ornate-section{isolation:isolate;overflow:hidden}
+.orn-corner,.orn-side-branch,.orn-gunungan-watermark{position:absolute;pointer-events:none;z-index:0;opacity:.16}
+.orn-corner{width:190px;height:190px;background:url('/ornaments/floral-corner.svg') center/contain no-repeat}
+.orn-corner-top-left{top:-24px;left:-28px;transform:rotate(-17deg)}
+.orn-corner-top-right{top:-24px;right:-28px;transform:scaleX(-1) rotate(-17deg)}
+.orn-corner-bottom-left{bottom:-52px;left:-22px;transform:scaleY(-1) rotate(-10deg);opacity:.11}
+.orn-corner-bottom-right{bottom:-52px;right:-22px;transform:scale(-1);opacity:.11}
+.orn-side-branch{top:50%;width:220px;height:320px;margin-top:-110px;background:url('/ornaments/floral-corner.svg') center/contain no-repeat;opacity:.08}
+.orn-side-left{left:-140px;transform:rotate(-88deg)}
+.orn-side-right{right:-140px;transform:scaleX(-1) rotate(-88deg)}
+.orn-gunungan-watermark{bottom:34px;width:120px;height:180px;background:url('/ornaments/botanical-bouquet.svg') center/contain no-repeat;opacity:.07}
+.orn-gunungan-left{left:38px}.orn-gunungan-right{right:38px;transform:scaleX(-1)}
+.section-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:-2px auto 26px;position:relative;z-index:1}
+.section-divider-line{width:min(94px,18vw);height:1px;background:color-mix(in srgb, var(--gold) 72%, transparent)}
+.section-divider-mark{color:var(--gold);font-size:28px;line-height:1}
+.ornate-section > *:not(.orn-corner):not(.orn-side-branch):not(.orn-gunungan-watermark){position:relative;z-index:1}
+.panel-cream .section-title,.panel-cream .section-intro,.panel-cream .empty-wishes{color:#34251f}
+.panel-dark .section-title,.panel-dark .section-intro{color:#f9f0e3}
+.countdown-section .countdown-grid,.event-section .event-grid,.gallery-section .gallery-grid,.rsvp-section .form-card,.wishes-section .wish-board{position:relative;z-index:2}
+.couple-section .symbol,.event-section .symbol,.closing-section .symbol{font-size:42px;margin:0 0 8px}
+@media(max-width:700px){
+  .orn-corner{width:124px;height:124px;opacity:.14}
+  .orn-corner-top-left{top:-16px;left:-18px}
+  .orn-corner-top-right{top:-16px;right:-18px}
+  .orn-corner-bottom-left,.orn-corner-bottom-right{bottom:-32px}
+  .orn-side-branch{display:none}
+  .orn-gunungan-watermark{width:72px;height:112px;bottom:18px;opacity:.06}
+  .orn-gunungan-left{left:8px}.orn-gunungan-right{right:8px}
+  .section-divider{gap:10px;margin-bottom:22px}
+  .section-divider-line{width:min(56px,18vw)}
+  .section-divider-mark{font-size:22px}
+}
+
+/* Refinement: visible but gentle botanical decoration in every section */
+.orn-corner{width:clamp(125px,16vw,255px);height:clamp(125px,16vw,255px);background-image:url('/ornaments/floral-corner.svg');opacity:.48;filter:none}
+.orn-corner-top-left{top:5px;left:4px;transform:none}
+.orn-corner-top-right{top:5px;right:4px;transform:scaleX(-1)}
+.orn-corner-bottom-left{bottom:0;left:4px;transform:scaleY(-1);opacity:.30}
+.orn-corner-bottom-right{bottom:0;right:4px;transform:scale(-1);opacity:.30}
+.orn-side-branch{background-image:url('/ornaments/botanical-bouquet.svg');opacity:.21;top:50%;width:190px;height:320px}
+.orn-side-left{left:-66px;transform:rotate(-14deg)}
+.orn-side-right{right:-66px;transform:scaleX(-1) rotate(-14deg)}
+.orn-gunungan-watermark{background-image:url('/ornaments/botanical-bouquet.svg');width:165px;height:235px;opacity:.25;bottom:18px}
+.orn-gunungan-left{left:24px}.orn-gunungan-right{right:24px}
+.ornamental-closing-gunungan{background-image:url('/ornaments/botanical-bouquet.svg');width:220px;height:300px;opacity:.48;right:3%;bottom:-18px;z-index:0}
+.ornamental-gunungan{background-image:url('/ornaments/botanical-bouquet.svg');opacity:.69}
+.ornate-section.panel-dark .orn-corner,.ornate-section.panel-dark .orn-side-branch,.ornate-section.panel-dark .orn-gunungan-watermark{filter:brightness(1.48) saturate(.75)}
+.ornate-section .section-divider{margin:5px auto 24px}
+.ornate-section .section-divider-mark{font-size:21px}
+@media(max-width:700px){
+  .orn-corner{width:110px;height:110px;opacity:.32}
+  .orn-corner-top-left{top:7px;left:0}.orn-corner-top-right{top:7px;right:0}
+  .orn-side-branch{display:none}
+  .orn-gunungan-watermark{width:90px;height:145px;opacity:.13}
+  .orn-gunungan-left{left:-10px}.orn-gunungan-right{right:-10px}
+  .ornamental-closing-gunungan{width:124px;height:210px;opacity:.22;right:-22px}
+}

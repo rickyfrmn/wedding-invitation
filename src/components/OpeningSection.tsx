@@ -10,6 +10,7 @@ export default function OpeningSection() {
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#211b19]/85 via-[#211b19]/85 to-[#211b19]" />
       <div className="pointer-events-none absolute inset-5 border border-[#c6a56a]/35 md:inset-8" aria-hidden="true" />
+      <div className="ornamental-opening-bloom" aria-hidden="true" />
 
       <div className="mx-auto grid min-h-[85svh] max-w-6xl items-center gap-12 px-8 py-24 md:grid-cols-2 md:gap-16 md:px-12">
         <div className="opening-copy text-center md:text-left">

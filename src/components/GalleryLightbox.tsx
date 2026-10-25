@@ -58,9 +58,14 @@ export default function GalleryLightbox() {
   }, [open]);
 
   return (
-    <section className="gallery-section panel-dark" id="galeri">
-      <p className="eyebrow gold-text">OUR MOMENTS</p>
+    <section className="gallery-section panel-dark ornate-section ornate-section-dark" id="galeri">
+      <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
+      <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
+      <div className="orn-gunungan-watermark orn-gunungan-left" aria-hidden="true" />
+      <div className="orn-gunungan-watermark orn-gunungan-right" aria-hidden="true" />
+      <p className="eyebrow gold-text">OUR MOMENT</p>
       <h2 className="section-title">Galeri Kami</h2>
+      <div className="section-divider" aria-hidden="true"><span className="section-divider-line" /><span className="section-divider-mark">✦</span><span className="section-divider-line" /></div>
       <p className="gallery-hint">Ketuk foto untuk melihat lebih besar</p>
       <div className="gallery-grid">
         {photos.map((photo, index) => (

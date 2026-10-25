@@ -15,8 +15,13 @@ export default function Wishes() {
  }, [load]);
  async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();setBusy(true);setNotice("");try{const r=await fetch("/api/wishes",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({guestName:name ?? guestNameFromUrl,message})});const d=await r.json();if(!r.ok)throw new Error(d.error||"Gagal mengirim ucapan.");setMessage("");setPage(0);setNotice("Ucapan berhasil dikirim. Terima kasih atas doanya!");await load();}catch(err){setNotice(err instanceof Error?err.message:"Terjadi kesalahan.");}finally{setBusy(false)}}
  const shown=items.slice(page*5,page*5+5); const pageCount=Math.max(1,Math.ceil(items.length/5));
- return <section className="wishes-section panel-dark" id="wishes">
+ return <section className="wishes-section panel-dark ornate-section ornate-section-dark" id="wishes">
+ <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
+ <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
+ <div className="orn-gunungan-watermark orn-gunungan-left" aria-hidden="true" />
+ <div className="orn-gunungan-watermark orn-gunungan-right" aria-hidden="true" />
  <p className="eyebrow gold-text">DOA DAN HARAPAN</p><h2 className="section-title">Ucapan & Doa</h2>
+ <div className="section-divider" aria-hidden="true"><span className="section-divider-line" /><span className="section-divider-mark">✦</span><span className="section-divider-line" /></div>
  <p className="section-intro">Tuliskan doa terbaik untuk perjalanan kami.</p>
  <div className="wish-board"><form className="wish-form" onSubmit={submit}>
  <label>Nama<input required maxLength={80} value={name ?? (guestNameFromUrl === "Tamu Undangan" ? "" : guestNameFromUrl)} onChange={e=>setName(e.target.value)} placeholder="Nama Anda" /></label>
