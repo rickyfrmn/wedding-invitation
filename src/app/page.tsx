@@ -196,31 +196,10 @@ export default function Home() {
             </section>
           </Reveal>
 
-          {/* FOTO PREWEDDING */}
-          <Reveal>
-            <section className="photo-interlude">
-              <Image
-                src="/images/romantic.webp"
-                alt="Nazil dan Tiara bergandengan tangan"
-                fill
-                sizes="100vw"
-                className="interlude-photo"
-              />
-
-              <div className="photo-gradient" />
-
-              <div className="interlude-words">
-                {/* <span>OUR STORY</span> */}
-              </div>
-            </section>
-          </Reveal>
-
-          
-
           {/* AKAD NIKAH */}
           <Reveal>
             <section
-              className="event-section panel-cream ornate-section ornate-section-cream"
+              className="event-section panel-dark ornate-section ornate-section-dark"
               id="acara"
             >
               <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
@@ -228,29 +207,26 @@ export default function Home() {
               <div className="orn-corner orn-corner-bottom-left" aria-hidden="true" />
               <div className="orn-corner orn-corner-bottom-right" aria-hidden="true" />
 
-              <p className="eyebrow gold-text">
-                WEDDING EVENTS
-              </p>
+              <p className="eyebrow gold-text">WEDDING EVENTS</p>
+              <h2 className="section-title">Rangkaian Acara</h2>
 
-              <h2 className="section-title">
-                Rangkaian Acara
-              </h2>
-
-              <SectionDivider />
+              <div className="section-divider" aria-hidden="true">
+                <span className="section-divider-line" />
+                <span className="section-divider-mark">❦</span>
+                <span className="section-divider-line" />
+              </div>
 
               <div className="event-grid">
-                <article className="event-card">
-                  <div className="symbol">❦</div>
-
-                  <h3>{wedding.akad.title}</h3>
-
-                  <p>{wedding.dateLabel}</p>
-
-                  <strong>{wedding.akad.time}</strong>
-
-                  <p>{wedding.akad.location}</p>
-                  <p>{wedding.akad.address}</p>
-                </article>
+                {[wedding.akad].map((event) => (
+                  <article className="event-card" key={event.title}>
+                    <div className="symbol">❦</div>
+                    <h3>{event.title}</h3>
+                    <p>{wedding.dateLabel}</p>
+                    <strong>{event.time}</strong>
+                    <p>{event.location}</p>
+                    <p>{event.address}</p>
+                  </article>
+                ))}
               </div>
 
               <a

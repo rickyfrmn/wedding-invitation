@@ -21,11 +21,9 @@ export default function GalleryLightbox() {
     triggerRef.current = trigger;
     setActiveIndex(index);
   }
-  function closePhoto() {
-    setActiveIndex(null);
-  }
+  function closePhoto() { setActiveIndex(null); }
   function goTo(offset: number) {
-    setActiveIndex((current) => current === null ? null : (current + offset + photos.length) % photos.length);
+    setActiveIndex(current => current === null ? null : (current + offset + photos.length) % photos.length);
   }
 
   useEffect(() => {
@@ -34,12 +32,11 @@ export default function GalleryLightbox() {
     document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
     function handleKey(event: KeyboardEvent) {
-      if (event.key === "Escape") closePhoto();
-      if (event.key === "ArrowRight") goTo(1);
-      if (event.key === "ArrowLeft") goTo(-1);
+      if (event.key === "Escape") setActiveIndex(null);
+      if (event.key === "ArrowRight") setActiveIndex(current => current === null ? null : (current + 1) % photos.length);
+      if (event.key === "ArrowLeft") setActiveIndex(current => current === null ? null : (current + photos.length - 1) % photos.length);
       if (event.key === "Tab") {
-        const focusable = document.querySelectorAll<HTMLButtonElement>(".lightbox-overlay button");
-        const buttons = Array.from(focusable);
+        const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>(".lightbox-overlay button"));
         const first = buttons[0];
         const last = buttons[buttons.length - 1];
         if (!first || !last) return;
@@ -59,14 +56,18 @@ export default function GalleryLightbox() {
   }, [open]);
 
   return (
-    <section className="gallery-section panel-dark ornate-section ornate-section-dark" id="galeri">
+    <section className="gallery-section panel-cream ornate-section ornate-section-cream" id="galeri">
       <div className="orn-corner orn-corner-top-left" aria-hidden="true" />
       <div className="orn-corner orn-corner-top-right" aria-hidden="true" />
-      <div className="orn-gunungan-watermark orn-gunungan-left" aria-hidden="true" />
-      <div className="orn-gunungan-watermark orn-gunungan-right" aria-hidden="true" />
+      <div className="orn-corner orn-corner-bottom-left" aria-hidden="true" />
+      <div className="orn-corner orn-corner-bottom-right" aria-hidden="true" />
       <p className="eyebrow gold-text">OUR MOMENT</p>
       <h2 className="section-title">Galeri Kami</h2>
-      <div className="section-divider" aria-hidden="true"><span className="section-divider-line" /><span className="section-divider-mark">✦</span><span className="section-divider-line" /></div>
+      <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-line" />
+        <span className="section-divider-mark">✦</span>
+        <span className="section-divider-line" />
+      </div>
       <p className="gallery-hint">Ketuk foto untuk melihat lebih besar</p>
       <div className="gallery-grid">
         {photos.map((photo, index) => (
@@ -100,30 +101,9 @@ export default function GalleryLightbox() {
         >
           <button ref={closeButtonRef} type="button" className="lightbox-close" onClick={closePhoto} aria-label="Tutup galeri">×</button>
           <button type="button" className="lightbox-nav lightbox-prev" onClick={() => goTo(-1)} aria-label="Foto sebelumnya">‹</button>
-          <div
-  className="lightbox-photo-wrap"
-  key={activeIndex}
-  style={{
-    position: "relative",
-    width: "min(85vw, 1000px)",
-    height: "85dvh",
-    maxHeight: "85dvh",
-    margin: "auto",
-  }}
->
-  <Image
-    src={photos[activeIndex].src}
-    alt={photos[activeIndex].alt}
-    fill
-    sizes="85vw"
-    className="lightbox-photo"
-    style={{
-      objectFit: "contain",
-      objectPosition: "center",
-    }}
-    unoptimized
-  />
-</div>
+          <div className="lightbox-photo-wrap" key={activeIndex} style={{position: "relative", width: "min(85vw, 1000px)", height: "85dvh", maxHeight: "85dvh", margin: "auto"}}>
+            <Image src={photos[activeIndex].src} alt={photos[activeIndex].alt} fill sizes="85vw" className="lightbox-photo" style={{objectFit: "contain", objectPosition: "center"}} unoptimized />
+          </div>
           <button type="button" className="lightbox-nav lightbox-next" onClick={() => goTo(1)} aria-label="Foto berikutnya">›</button>
           <p className="lightbox-counter">{activeIndex + 1} / {photos.length}</p>
         </div>,
