@@ -28,7 +28,7 @@ export default function Cover({ onOpen, onStartMusic }: CoverProps) {
       </div>
       <div className="cover-shade" />
       <div className="gold-frame" aria-hidden="true"><span>✦</span></div>
-      <div className="ornamental-cover-arch" aria-hidden="true" />
+      {/* <div className="ornamental-cover-arch" aria-hidden="true" /> */}
       <div className="ornamental-gunungan ornamental-gunungan-left" aria-hidden="true" />
       <div className="ornamental-gunungan ornamental-gunungan-right" aria-hidden="true" />
       <div className="cover-content">
