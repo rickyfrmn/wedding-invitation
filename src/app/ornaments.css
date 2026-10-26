@@ -55,7 +55,7 @@
 .orn-side-branch{background-image:url('/ornaments/botanical-bouquet.svg');opacity:.21;top:50%;width:190px;height:320px}
 .orn-side-left{left:-66px;transform:rotate(-14deg)}
 .orn-side-right{right:-66px;transform:scaleX(-1) rotate(-14deg)}
-.orn-gunungan-watermark{background-image:url('/ornaments/botanical-bouquet.svg');width:165px;height:235px;opacity:.25;bottom:18px}
+.orn-gunungan-watermark{background-image:url('/ornaments/botanical-bouquet1.svg');width:165px;height:235px;opacity:.25;bottom:18px}
 .orn-gunungan-left{left:24px}.orn-gunungan-right{right:24px}
 .ornamental-closing-gunungan{background-image:url('/ornaments/botanical-bouquet.svg');width:220px;height:300px;opacity:.48;right:3%;bottom:-18px;z-index:0}
 .ornamental-gunungan{background-image:url('/ornaments/botanical-bouquet.svg');opacity:.69}

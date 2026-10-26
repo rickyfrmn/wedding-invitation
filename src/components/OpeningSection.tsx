@@ -22,19 +22,26 @@ export default function OpeningSection() {
       {/* GRADIENT GELAP */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#211b19]/85 via-[#211b19]/85 to-[#211b19]" />
 
-      {/* BORDER EMAS */}
+      {/* BINGKAI EMAS */}
       <div
         className="pointer-events-none absolute inset-5 border border-[#c6a56a]/35 md:inset-8"
         aria-hidden="true"
       />
 
-      {/* ORNAMEN */}
+      {/* ORNAMEN EMAS KIRI */}
       <div
-        className="ornamental-opening-bloom"
+        className="opening-botanical opening-botanical-left"
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid min-h-[85svh] max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 md:grid-cols-2 md:gap-16 md:px-12 md:py-24">
+      {/* ORNAMEN EMAS KANAN */}
+      <div
+        className="opening-botanical opening-botanical-right"
+        aria-hidden="true"
+      />
+
+      {/* KONTEN UTAMA */}
+      <div className="relative z-10 mx-auto grid min-h-[85svh] max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 md:grid-cols-2 md:gap-16 md:px-12 md:py-24">
 
         {/* BAGIAN TEKS */}
         <div className="opening-copy min-w-0 text-center md:text-left">
@@ -50,7 +57,7 @@ export default function OpeningSection() {
             THE WEDDING OF
           </p>
 
-          {/* NAMA MEMPELAI */}
+          {/* NAMA PASANGAN */}
           <h2 className="opening-couple-name mt-5 font-serif font-normal text-[#f9f0e3]">
             {wedding.groom}
             <span className="text-[#c6a56a]">
@@ -95,7 +102,7 @@ export default function OpeningSection() {
           <div className="relative aspect-[3/4] overflow-hidden rounded-t-[11rem] rounded-b-lg shadow-2xl shadow-black/40">
             <Image
               src="/images/gallery.webp"
-              alt="Nazzil Romadhoni dan Tiara Faikha Suci mengenakan busana tradisional Jawa"
+              alt="Nazil Romadhoni dan Tiara Faika Suci mengenakan busana tradisional Jawa"
               fill
               sizes="(max-width: 768px) 85vw, 390px"
               className="object-cover object-[center_38%]"
@@ -104,7 +111,6 @@ export default function OpeningSection() {
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/35 to-transparent" />
           </div>
         </div>
-
       </div>
     </section>
   );

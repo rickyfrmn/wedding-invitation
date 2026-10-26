@@ -939,3 +939,123 @@
 @media (prefers-reduced-motion:reduce) {
   .gallery-section.panel-cream .gallery-photo-button img { transition: none; }
 }
+
+
+/* =========================================
+   BOTANICAL BOUQUET - COVER NAZIL & TIARA
+   Responsive Desktop, Tablet dan Mobile
+   ========================================= */
+
+/* Pengaturan dasar kedua ornamen */
+.cover-screen .ornamental-gunungan {
+  position: absolute;
+  bottom: 18px;
+
+  width: clamp(180px, 20vw, 310px);
+  height: clamp(180px, 20vw, 310px);
+
+  background-image: url("/ornaments/botanical-bouquet.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sudut kiri bawah */
+.cover-screen .ornamental-gunungan-left {
+  left: 18px;
+  right: auto;
+  transform: none;
+}
+
+/* Sudut kanan bawah */
+.cover-screen .ornamental-gunungan-right {
+  right: 18px;
+  left: auto;
+  transform: scaleX(-1);
+}
+
+/* Konten berada di depan ornamen */
+.cover-screen .cover-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   LAPTOP / DESKTOP
+   ========================================= */
+
+@media (min-width: 1024px) {
+  .cover-screen .ornamental-gunungan {
+    width: clamp(220px, 19vw, 330px);
+    height: clamp(220px, 19vw, 330px);
+    bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+    left: 20px;
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+    right: 20px;
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (min-width: 701px) and (max-width: 1023px) {
+  .cover-screen .ornamental-gunungan {
+    width: 200px;
+    height: 200px;
+    bottom: 18px;
+    opacity: 0.8;
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+    left: 18px;
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+    right: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .cover-screen .ornamental-gunungan {
+    width: clamp(100px, 31vw, 150px);
+    height: clamp(100px, 31vw, 150px);
+
+    bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+    left: 12px;
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+    right: 12px;
+  }
+}
+
+/* =========================================
+   HP SANGAT KECIL
+   ========================================= */
+
+@media (max-width: 360px) {
+  .cover-screen .ornamental-gunungan {
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+  }
+}
