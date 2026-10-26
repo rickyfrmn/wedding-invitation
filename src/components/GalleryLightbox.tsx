@@ -5,9 +5,9 @@ import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 
 const photos = [
-  { src: "/images/cover.webp", alt: "Nazil dan Tiara berfoto bersama" },
-  { src: "/images/romantic.webp", alt: "Nazil dan Tiara berjalan bergandengan" },
-  { src: "/images/gallery.webp", alt: "Nazil dan Tiara memberi salam" },
+  { src: "/images/cover.webp", alt: "Nazzil dan Tiara berfoto bersama" },
+  { src: "/images/romantic.webp", alt: "Nazzil dan Tiara berjalan bergandengan" },
+  { src: "/images/gallery.webp", alt: "Nazzil dan Tiara memberi salam" },
 ];
 
 export default function GalleryLightbox() {

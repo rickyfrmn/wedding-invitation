@@ -95,7 +95,7 @@ export default function OpeningSection() {
           <div className="relative aspect-[3/4] overflow-hidden rounded-t-[11rem] rounded-b-lg shadow-2xl shadow-black/40">
             <Image
               src="/images/gallery.webp"
-              alt="Nazil Romadhoni dan Tiara Faika Suci mengenakan busana tradisional Jawa"
+              alt="Nazzil Romadhoni dan Tiara Faikha Suci mengenakan busana tradisional Jawa"
               fill
               sizes="(max-width: 768px) 85vw, 390px"
               className="object-cover object-[center_38%]"

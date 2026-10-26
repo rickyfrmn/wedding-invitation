@@ -24,7 +24,7 @@ export default function Cover({ onOpen, onStartMusic }: CoverProps) {
     <section className={`cover-screen animated-cover ${leaving ? "cover-leaving" : ""}`}>
       <div className="cover-backdrop" aria-hidden="true" style={{ backgroundImage: "url('/images/cover.webp')" }} />
       <div className="cover-portrait">
-        <Image src="/images/cover.webp" alt="Nazil dan Tiara mengenakan busana Jawa" fill priority sizes="(max-width: 700px) 100vw, 530px" className="cover-photo" />
+        <Image src="/images/cover.webp" alt="Nazzil dan Tiara mengenakan busana Jawa" fill priority sizes="(max-width: 700px) 100vw, 530px" className="cover-photo" />
       </div>
       <div className="cover-shade" />
       <div className="gold-frame" aria-hidden="true"><span>✦</span></div>
