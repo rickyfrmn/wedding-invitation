@@ -1,550 +1,244 @@
 @import "tailwindcss";
 
-
-
 :root{--ink:#1c1716;--gold:#c6a56a;--cream:#f5ebdd}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);font-family:Arial,Helvetica,sans-serif}button,a,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}.invitation{overflow:hidden}.panel-dark{background:#211b19;color:#f9f0e3}.panel-cream{background:var(--cream);color:#34251f}.gold-text{color:var(--gold)!important}.eyebrow{letter-spacing:.33em;font-size:11px;font-weight:700}.cover-screen{min-height:100svh;position:relative;display:flex;justify-content:center;align-items:center;color:#fff;text-align:center;isolation:isolate;background:#151313;padding:65px 22px}.cover-backdrop{position:absolute;inset:-25px;z-index:-4;background-size:cover;background-position:center;filter:blur(23px) brightness(.45);transform:scale(1.04)}.cover-portrait{position:absolute;inset:0;margin:auto;width:min(100%,530px);height:100%;z-index:-3;opacity:.98}.cover-photo{object-fit:cover;object-position:center 36%}.cover-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,12,13,.58),rgba(15,12,13,.36),rgba(15,12,13,.58)),linear-gradient(0deg,rgba(10,9,9,.85),transparent 75%);z-index:-2}.gold-frame{position:absolute;inset:18px;border:1px solid rgba(198,165,106,.72);pointer-events:none}.gold-frame:before,.gold-frame:after{content:"✦";position:absolute;color:var(--gold);top:-10px}.gold-frame:before{left:14px}.gold-frame:after{right:14px}.gold-frame span{position:absolute;top:12px;left:50%;color:var(--gold)}.cover-content{max-width:850px;z-index:1;text-shadow:0 2px 10px rgba(0,0,0,.55)}.cover-content .ornament{font-size:39px;color:var(--gold);margin-bottom:58px}.cover-content h1,.couple-big{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,7vw,96px);font-weight:400;line-height:1.15;margin:25px 0}.cover-content h1 em,.couple-big em,.closing-section em{font-style:normal;color:var(--gold)}.cover-date,.date-small{font-family:Georgia,serif;letter-spacing:.12em}.fine-rule{width:115px;border-top:1px solid var(--gold);margin:22px auto}.invited-caption{font-size:14px}.guest-name{font-family:Georgia,serif;font-size:23px;font-weight:bold;margin:10px 0 28px}.gold-button{border:0;border-radius:40px;background:var(--gold);color:#17120f;font-weight:700;padding:15px 30px;box-shadow:0 6px 22px #0005}.gold-button:hover,.dark-button:hover{filter:brightness(1.12)}.opening-section,.couple-section,.countdown-section,.event-section,.gallery-section,.closing-section,.rsvp-section,.wishes-section{padding:95px 24px;text-align:center;position:relative}.opening-section{min-height:90svh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 50% 30%,#3b2d26,#211b19 65%)}.ornament,.symbol{color:var(--gold);font-size:49px;line-height:1.3}.opening-section .ornament{margin-bottom:20px}.couple-big{font-size:clamp(48px,7vw,83px)}.thin-leaf{color:var(--gold);letter-spacing:12px;margin:8px 0 25px}.small-copy{max-width:520px;line-height:1.9;font-size:16px}.date-small{margin:25px 0 70px}.scroll-cue{color:var(--gold);font-size:12px;text-decoration:none}.section-title{font:normal clamp(35px,5vw,58px)/1.2 Georgia,serif;margin:12px 0 28px}.couple-section h3{font:normal clamp(27px,5vw,40px)/1.3 Georgia,serif;color:#8f6d35;margin:12px 0}.couple-section p:not(.eyebrow){font-size:15px}.ampersand{font:normal 62px Georgia,serif;color:var(--gold);margin:22px 0}.photo-interlude{height:min(85vh,800px);min-height:480px;position:relative;color:white}.photo-interlude img{object-fit:cover;object-position:center 58%}.photo-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent 62%)}.interlude-words{position:absolute;bottom:50px;left:0;right:0;text-align:center}.interlude-words span{font-size:12px;letter-spacing:.3em;color:var(--gold)}.interlude-words h2{font:normal clamp(32px,6vw,58px) Georgia,serif}.countdown-grid{max-width:620px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:35px auto 0}.count-box{border:1px solid var(--gold);border-radius:12px;padding:17px 6px}.count-box b{font:normal clamp(22px,4vw,44px) Georgia,serif;display:block}.count-box span{font-size:12px;color:var(--gold)}.event-grid{max-width:860px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:40px auto}.event-card{border:1px solid #b99a62;border-radius:120px 120px 16px 16px;padding:35px 20px;background:#fff8ec}.event-card h3{font:normal 35px Georgia,serif;margin:9px 0 25px}.event-card strong{color:#87602f;display:block;margin:14px 0}.event-card p{line-height:1.6}.dark-button{display:inline-block;background:#38251f;color:white;border:0;text-decoration:none;padding:13px 27px;border-radius:28px}.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:960px;margin:35px auto}.gallery-grid img{display:block;width:100%;height:390px;object-fit:cover;object-position:center;border:2px solid rgba(198,165,106,.6);border-radius:90px 90px 8px 8px}.closing-section h2{font:normal 54px Georgia,serif;margin:15px}.closing-section p{max-width:520px;line-height:1.9;margin:25px auto}.closing-section h3{font:normal 36px Georgia,serif;color:#866438}.section-intro{line-height:1.8;margin:0 auto 35px;max-width:560px}.form-card,.wish-board{max-width:600px;margin:auto;text-align:left;border:1px solid #c8ab78;border-radius:16px;overflow:hidden;background:#fff9f1;box-shadow:0 12px 30px #211b1914}.form-card{padding:29px}.form-card label,.wish-form label{display:block;font-weight:600;font-size:14px;margin-bottom:19px}.form-card input,.form-card select,.form-card textarea,.wish-form input,.wish-form textarea{margin-top:8px;width:100%;padding:13px 15px;border:1px solid #cbbda8;border-radius:9px;background:#fff;color:#302523;outline-color:#b99757;resize:vertical}.submit{width:100%;font-weight:bold}.feedback{font-size:13px;color:#795b28;line-height:1.5;margin-top:13px}.wish-board{max-width:650px;color:#34251f}.wish-form{padding:27px}.wish-list{border-top:1px solid #ded2bd;max-height:450px;overflow:auto}.wish-item{display:flex;align-items:start;gap:12px;padding:18px 25px;border-bottom:1px solid #e6daca}.wish-avatar{background:#8c643d;color:white;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;flex-shrink:0}.wish-item strong{color:#815a29}.wish-item p{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.65;margin:6px 0}.wish-item small{color:#918474}.empty-wishes{text-align:center;padding:25px;color:#786a5a}.pagination{display:flex;justify-content:center;gap:25px;align-items:center;padding:15px;background:#f3ede2;font-size:13px}.pagination button{color:#775631}.pagination button:disabled{opacity:.35}@media(max-width:700px){.cover-portrait{width:100%}.cover-photo{object-position:center 38%}.cover-content h1{font-size:clamp(48px,12vw,70px)}.cover-content .ornament{margin-bottom:45px}.gold-frame{inset:12px}.event-grid{grid-template-columns:1fr;max-width:400px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-grid img{height:270px}.gallery-grid img:last-child{grid-column:span 2;width:min(100%,320px);margin:auto}.opening-section,.couple-section,.countdown-section,.event-section,.gallery-section,.closing-section,.rsvp-section,.wishes-section{padding:75px 20px}.section-title{font-size:39px}.photo-interlude{height:620px}.countdown-grid{gap:6px}.count-box{padding:16px 1px}}
-
-
-
-
-
-
 
 /* === Nazil & Tiara — perbaikan formulir responsif === */
 
-
-
 .rsvp-section,.wishes-section { padding: 88px 20px 100px; }
-
-
 
 .rsvp-section .eyebrow,.wishes-section .eyebrow { margin: 0 0 12px; }
 
-
-
 .rsvp-section .section-title,.wishes-section .section-title { margin: 0 0 16px; }
-
-
 
 .rsvp-section .section-intro,.wishes-section .section-intro { margin: 0 auto 35px; max-width: 520px; line-height: 1.75; }
 
-
-
 .rsvp-section .form-card,.wishes-section .wish-board {
-
-
 
   width: min(100%, 610px); max-width: 610px; margin: 0 auto;
 
-
-
   display: block; text-align: left; overflow: hidden;
-
-
 
   border: 1px solid #ccb58c; border-radius: 20px;
 
-
-
   background: #fffaf2; color: #34251f;
-
-
 
   box-shadow: 0 18px 48px rgba(0,0,0,.12);
 
-
-
 }
-
-
 
 .rsvp-section .form-card { padding: clamp(20px, 4vw, 38px); }
 
-
-
 .rsvp-section .form-card label,.wishes-section .wish-form label {
-
-
 
   display: block; width: 100%; margin: 0 0 20px;
 
-
-
   font: 600 14px/1.5 Arial, sans-serif;
-
-
 
   color: #3d2b22;
 
-
-
 }
-
-
 
 .rsvp-section .form-card input,.rsvp-section .form-card select,.rsvp-section .form-card textarea,
 
-
-
 .wishes-section .wish-form input,.wishes-section .wish-form textarea {
-
-
 
   display: block; width: 100%; min-width: 0; margin: 8px 0 0;
 
-
-
   padding: 14px 16px; border: 1px solid #d6c6ac; border-radius: 11px;
-
-
 
   background: white; color: #34251f;
 
-
-
   font: 400 15px/1.5 Arial, sans-serif;
-
-
 
   box-shadow: none; outline-offset: 1px;
 
-
-
 }
-
-
 
 .rsvp-section .form-card textarea,.wishes-section .wish-form textarea { min-height: 106px; resize: vertical; }
 
-
-
 .rsvp-section .form-card input:focus,.rsvp-section .form-card select:focus,.rsvp-section .form-card textarea:focus,
-
-
 
 .wishes-section .wish-form input:focus,.wishes-section .wish-form textarea:focus {
 
-
-
   outline: 2px solid #b58c47; border-color: #b58c47;
 
-
-
 }
-
-
 
 .rsvp-section .form-card .submit,.wishes-section .wish-form .submit {
 
-
-
   display: block; width: 100%; min-height: 50px; margin-top: 6px;
-
-
 
   border: 0; border-radius: 12px; padding: 14px 18px;
 
-
-
   background: #2e2420; color: #fff8ee; font: 700 15px/1.4 Arial,sans-serif;
 
-
-
 }
-
-
 
 .wishes-section .wish-board { max-width: 670px; }
 
-
-
 .wishes-section .wish-form { display: block; padding: clamp(20px,4vw,36px); }
-
-
 
 .wishes-section .wish-list { max-height: 430px; overflow-y: auto; border-top: 1px solid #dfd3c0; }
 
-
-
 .wishes-section .wish-item { display: flex; gap: 14px; padding: 18px 26px; border-bottom: 1px solid #e8dfd0; }
-
-
 
 .wishes-section .empty-wishes { display: block; text-align: center; padding: 27px 15px; }
 
-
-
 .wishes-section .feedback,.rsvp-section .feedback { display:block; margin: 16px 0 0; line-height: 1.6; }
-
-
 
 @media(max-width:600px){
 
-
-
   .rsvp-section,.wishes-section {padding: 72px 16px 82px;}
-
-
 
   .rsvp-section .section-title,.wishes-section .section-title {font-size: 44px;}
 
-
-
   .rsvp-section .form-card,.wishes-section .wish-board {border-radius: 16px;}
 
-
-
 }
-
-
-
-
-
-
 
 /* Wedding background music: always above photo and form content */
 
-
-
 .wedding-music-toggle{position:fixed;bottom:max(22px,env(safe-area-inset-bottom));right:22px;z-index:9999;display:grid;place-items:center;width:54px;height:54px;border:1px solid #c6a56a;border-radius:50%;background:#211b19ee;color:#f9f0e3;font:normal 27px Georgia,serif;box-shadow:0 8px 24px #0005;transition:transform .25s ease,background .25s ease;}
-
-
 
 .wedding-music-toggle:hover{transform:scale(1.08);background:#3c3028;}
 
-
-
 .wedding-music-toggle.is-playing span{animation:musicPulse 2.1s ease-in-out infinite;}
-
-
 
 @keyframes musicPulse{50%{transform:scale(1.18)}}
 
-
-
 @media(prefers-reduced-motion:reduce){.wedding-music-toggle.is-playing span{animation:none}}
-
-
-
-
-
-
 
 /* Only one event card remains: center it on desktop and mobile. */
 
-
-
 .event-section .event-grid { grid-template-columns:minmax(0, 1fr); max-width:480px; margin-inline:auto; }
-
-
-
-
-
-
-
-
-
-
 
 /* Perbaikan ukuran nama pasangan di HP */
 
-
-
 @media (max-width: 700px) {
-
-
 
   .cover-content h1 {
 
-
-
     font-size: clamp(30px, 8vw, 42px) !important;
 
-
-
     line-height: 1.2;
-
-
 
     letter-spacing: -0.5px;
 
-
-
     white-space: nowrap;
 
-
-
   }
-
-
-
-
-
-
 
   .couple-big {
 
-
-
     font-size: clamp(34px, 9vw, 48px);
-
-
 
     line-height: 1.2;
 
-
-
   }
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 /* QS. Ar-Rum 21 */
 
-
-
 .quran-verse {
-
-
 
   width: min(100%, 760px);
 
-
-
   margin: 35px auto 50px;
-
-
 
   padding: 35px 30px;
 
-
-
   border: 1px solid rgba(180, 145, 87, 0.5);
-
-
 
   border-radius: 100px 100px 18px 18px;
 
-
-
   background: rgba(255, 250, 242, 0.6);
-
-
 
   text-align: center;
 
-
-
 }
-
-
-
-
-
-
 
 .quran-decoration {
 
-
-
   color: #b59457;
-
-
 
   font-size: 32px;
 
-
-
   margin-bottom: 20px;
 
-
-
 }
-
-
-
-
-
-
 
 .quran-arabic {
 
-
-
   font-family: "Traditional Arabic", "Amiri", serif;
-
-
 
   font-size: 29px;
 
-
-
   line-height: 2.3;
-
-
 
   color: #38251f;
 
-
-
   margin-bottom: 28px;
 
-
-
 }
-
-
-
-
-
-
 
 .quran-translation {
 
-
-
   font-family: Georgia, serif;
-
-
 
   font-size: 15px;
 
-
-
   font-style: italic;
-
-
 
   line-height: 2;
 
-
-
   color: #6b5445;
 
-
-
 }
-
-
-
-
-
-
 
 .quran-reference {
 
-
-
   margin-top: 25px;
-
-
 
   color: #a17e49;
 
-
-
   font-weight: 700;
-
-
 
   letter-spacing: 2px;
 
-
-
   font-size: 12px;
 
-
-
 }
-
-
-
-
-
-
 
 @media (max-width: 700px) {
 
-
-
   .quran-verse {
-
-
 
     padding: 30px 18px;
 
-
-
     margin: 25px auto 40px;
-
-
 
     border-radius: 65px 65px 15px 15px;
 
-
-
   }
-
-
-
-
-
-
 
   .quran-arabic {
 
-
-
     font-size: 24px;
-
-
 
     line-height: 2.2;
 
-
-
   }
-
-
-
-
-
-
 
   .quran-translation {
 
-
-
     font-size: 14px;
-
-
 
     line-height: 1.9;
 
-
-
   }
 
-
-
 }
-
-
-
-
-
-
 
 /* =========================================================
 
@@ -760,17 +454,11 @@
 
 }
 
-
-
-
-
 /* =========================================
 
    OPENING SECTION - NAZIL & TIARA
 
    ========================================= */
-
-
 
 .opening-section .opening-couple-name,
 
@@ -785,8 +473,6 @@
   overflow-wrap: normal;
 
 }
-
-
 
 /* Tampilan tablet dan HP */
 
@@ -808,8 +494,6 @@
 
   }
 
-
-
   .opening-animated .opening-copy {
 
     width: 100%;
@@ -817,8 +501,6 @@
     min-width: 0;
 
   }
-
-
 
   .opening-animated .opening-photo {
 
@@ -829,8 +511,6 @@
   }
 
 }
-
-
 
 /* HP dengan layar kecil */
 
@@ -846,216 +526,640 @@
 
 }
 
-
 /* ===========================================================
+
    FINAL: Tukar warna section acara & galeri (Nazil & Tiara)
+
    Acara = coklat; Galeri = krem. Semua bagian lain tetap.
+
    =========================================================== */
+
 .event-section.panel-dark {
+
   background: #211b19;
+
   color: #f9f0e3;
-}
-.event-section.panel-dark .section-title,
-.event-section.panel-dark .event-card h3 { color: #f9f0e3; }
-.event-section.panel-dark .event-card {
-  background: #2b2420;
-  border: 1px solid #c6a56a;
-  color: #f9f0e3;
-}
-.event-section.panel-dark .event-card strong,
-.event-section.panel-dark .event-card .symbol { color: #d6b477; }
-.event-section.panel-dark .dark-button {
-  background: #c6a56a;
-  color: #211b19;
-  font-weight: 700;
-}
-.event-section .event-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  width: min(100%, 480px);
-  margin: 40px auto;
-}
-.gallery-section.panel-cream {
-  background: #f5ebdd;
-  color: #34251f;
-}
-.gallery-section.panel-cream .section-title {
-  color: #34251f;
-}
-.gallery-section.panel-cream .gallery-hint {
-  color: #705949;
-  margin: 6px auto 12px;
-}
-.gallery-section.panel-cream .gallery-photo-button {
-  position: relative;
-  min-width: 0;
-  padding: 0;
-  border: 1px solid rgba(176, 137, 77, .7);
-  border-radius: 100px 100px 10px 10px;
-  background: #fff9f0;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(56,37,31,.12);
-  cursor: zoom-in;
-}
-.gallery-section.panel-cream .gallery-photo-button img {
-  display: block;
-  width: 100%;
-  height: 390px;
-  object-fit: cover;
-  border: 0;
-  border-radius: 0;
-  transition: transform .35s ease;
-}
-.gallery-section.panel-cream .gallery-photo-button:hover img {
-  transform: scale(1.04);
-}
-.gallery-section.panel-cream .gallery-zoom-icon {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  display: grid;
-  place-items: center;
-  width: 39px;
-  height: 39px;
-  color: #fff;
-  background: #211b19dd;
-  border: 1px solid #c6a56a;
-  border-radius: 50%;
-  font-size: 22px;
-}
-/* Lightbox ada di document.body, jangan beri aturan .gallery-section untuk overlay. */
-@media(max-width:700px) {
-  .gallery-section.panel-cream .gallery-photo-button img { height: 270px; }
-  .gallery-section.panel-cream .gallery-grid .gallery-photo-button:last-child {
-    grid-column: span 2;
-    width: min(100%, 320px);
-    justify-self: center;
-  }
-  .gallery-section.panel-cream .gallery-grid .gallery-photo-button:last-child img {
-    width: 100%;
-  }
-  .event-section.panel-dark .event-card { padding: 35px 16px; }
-}
-@media (prefers-reduced-motion:reduce) {
-  .gallery-section.panel-cream .gallery-photo-button img { transition: none; }
+
 }
 
+.event-section.panel-dark .section-title,
+
+.event-section.panel-dark .event-card h3 { color: #f9f0e3; }
+
+.event-section.panel-dark .event-card {
+
+  background: #2b2420;
+
+  border: 1px solid #c6a56a;
+
+  color: #f9f0e3;
+
+}
+
+.event-section.panel-dark .event-card strong,
+
+.event-section.panel-dark .event-card .symbol { color: #d6b477; }
+
+.event-section.panel-dark .dark-button {
+
+  background: #c6a56a;
+
+  color: #211b19;
+
+  font-weight: 700;
+
+}
+
+.event-section .event-grid {
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr);
+
+  width: min(100%, 480px);
+
+  margin: 40px auto;
+
+}
+
+.gallery-section.panel-cream {
+
+  background: #f5ebdd;
+
+  color: #34251f;
+
+}
+
+.gallery-section.panel-cream .section-title {
+
+  color: #34251f;
+
+}
+
+.gallery-section.panel-cream .gallery-hint {
+
+  color: #705949;
+
+  margin: 6px auto 12px;
+
+}
+
+.gallery-section.panel-cream .gallery-photo-button {
+
+  position: relative;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 1px solid rgba(176, 137, 77, .7);
+
+  border-radius: 100px 100px 10px 10px;
+
+  background: #fff9f0;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 28px rgba(56,37,31,.12);
+
+  cursor: zoom-in;
+
+}
+
+.gallery-section.panel-cream .gallery-photo-button img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 390px;
+
+  object-fit: cover;
+
+  border: 0;
+
+  border-radius: 0;
+
+  transition: transform .35s ease;
+
+}
+
+.gallery-section.panel-cream .gallery-photo-button:hover img {
+
+  transform: scale(1.04);
+
+}
+
+.gallery-section.panel-cream .gallery-zoom-icon {
+
+  position: absolute;
+
+  bottom: 14px;
+
+  right: 14px;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 39px;
+
+  height: 39px;
+
+  color: #fff;
+
+  background: #211b19dd;
+
+  border: 1px solid #c6a56a;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+}
+
+/* Lightbox ada di document.body, jangan beri aturan .gallery-section untuk overlay. */
+
+@media(max-width:700px) {
+
+  .gallery-section.panel-cream .gallery-photo-button img { height: 270px; }
+
+  .gallery-section.panel-cream .gallery-grid .gallery-photo-button:last-child {
+
+    grid-column: span 2;
+
+    width: min(100%, 320px);
+
+    justify-self: center;
+
+  }
+
+  .gallery-section.panel-cream .gallery-grid .gallery-photo-button:last-child img {
+
+    width: 100%;
+
+  }
+
+  .event-section.panel-dark .event-card { padding: 35px 16px; }
+
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .gallery-section.panel-cream .gallery-photo-button img { transition: none; }
+
+}
 
 /* =========================================
+
    BOTANICAL BOUQUET - COVER NAZIL & TIARA
+
    Responsive Desktop, Tablet dan Mobile
+
    ========================================= */
 
 /* Pengaturan dasar kedua ornamen */
+
 .cover-screen .ornamental-gunungan {
+
   position: absolute;
+
   bottom: 18px;
 
   width: clamp(180px, 20vw, 310px);
+
   height: clamp(180px, 20vw, 310px);
 
   background-image: url("/ornaments/botanical-bouquet.svg");
+
   background-repeat: no-repeat;
+
   background-size: contain;
+
   background-position: bottom left;
 
   opacity: 0.85;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+}
+
+/* Sudut kiri bawah */
+
+.cover-screen .ornamental-gunungan-left {
+
+  left: 18px;
+
+  right: auto;
+
+  transform: none;
+
+}
+
+/* Sudut kanan bawah */
+
+.cover-screen .ornamental-gunungan-right {
+
+  right: 18px;
+
+  left: auto;
+
+  transform: scaleX(-1);
+
+}
+
+/* Konten berada di depan ornamen */
+
+.cover-screen .cover-content {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+/* =========================================
+
+   LAPTOP / DESKTOP
+
+   ========================================= */
+
+@media (min-width: 1024px) {
+
+  .cover-screen .ornamental-gunungan {
+
+    width: clamp(220px, 19vw, 330px);
+
+    height: clamp(220px, 19vw, 330px);
+
+    bottom: 20px;
+
+    opacity: 0.9;
+
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+
+    left: 20px;
+
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+
+    right: 20px;
+
+  }
+
+}
+
+/* =========================================
+
+   TABLET
+
+   ========================================= */
+
+@media (min-width: 701px) and (max-width: 1023px) {
+
+  .cover-screen .ornamental-gunungan {
+
+    width: 200px;
+
+    height: 200px;
+
+    bottom: 18px;
+
+    opacity: 0.8;
+
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+
+    left: 18px;
+
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+
+    right: 18px;
+
+  }
+
+}
+
+/* =========================================
+
+   MOBILE
+
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .cover-screen .ornamental-gunungan {
+
+    width: clamp(100px, 31vw, 150px);
+
+    height: clamp(100px, 31vw, 150px);
+
+    bottom: 12px;
+
+    opacity: 0.8;
+
+  }
+
+  .cover-screen .ornamental-gunungan-left {
+
+    left: 12px;
+
+  }
+
+  .cover-screen .ornamental-gunungan-right {
+
+    right: 12px;
+
+  }
+
+}
+
+/* =========================================
+
+   HP SANGAT KECIL
+
+   ========================================= */
+
+@media (max-width: 360px) {
+
+  .cover-screen .ornamental-gunungan {
+
+    width: 100px;
+
+    height: 100px;
+
+    opacity: 0.7;
+
+  }
+
+}
+
+
+/* ==========================================================
+   OPENING FOTO + BUNGA (satu aturan, desktop & mobile)
+   ========================================================== */
+.opening-animated .opening-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 3 / 4;
+  min-width: 0;
+  margin: 0 auto;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.opening-animated .opening-photo-border {
+  position: absolute;
+  inset: -9px;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(198, 165, 106, 0.75);
+  border-radius: 50% 50% 12px 12px / 36% 36% 12px 12px;
+}
+
+.opening-animated .opening-photo-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #332822;
+  border-radius: 50% 50% 9px 9px / 36% 36% 9px 9px;
+}
+
+.opening-animated .opening-photo-inner .opening-photo-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.opening-animated .opening-photo-gradient {
+  position: absolute;
+  inset: auto 0 0;
+  height: 22%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .27), transparent);
+  pointer-events: none;
+}
+
+/* Ornamen ditempel pada bingkai, bukan menjadi item grid */
+.opening-animated .opening-photo-frame .opening-flower {
+  position: absolute !important;
+  display: block;
+  width: clamp(100px, 11vw, 150px) !important;
+  height: auto !important;
+  max-width: none;
+  margin: 0 !important;
+  opacity: .95;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 5px 9px rgba(0,0,0,.15));
+}
+
+/* File floral-side-accent.png berbentuk bouquet pojok kiri atas */
+.opening-animated .opening-photo-frame .opening-flower-top {
+  top: -12px;
+  left: -16px;
+  right: auto;
+  bottom: auto;
+  transform: none;
+}
+
+.opening-animated .opening-photo-frame .opening-flower-bottom {
+  right: -18px;
+  bottom: -15px;
+  top: auto;
+  left: auto;
+  transform: rotate(180deg);
+}
+
+/* Nama pasangan tetap satu baris di HP */
+@media (max-width: 767px) {
+  .opening-animated .opening-photo-frame {
+    width: min(76vw, 310px);
+    margin: 10px auto 14px;
+  }
+
+  .opening-animated .opening-photo-frame .opening-flower {
+    width: clamp(72px, 24vw, 105px) !important;
+  }
+
+  .opening-animated .opening-photo-frame .opening-flower-top {
+    top: 0;
+    left: -6px;
+  }
+
+  .opening-animated .opening-photo-frame .opening-flower-bottom {
+    right: -7px;
+    bottom: -6px;
+  }
+
+  .opening-animated .opening-couple-name {
+    font-size: clamp(24px, 6.6vw, 36px) !important;
+    line-height: 1.2;
+    white-space: nowrap;
+    letter-spacing: -.035em;
+  }
+}
+
+@media (max-width: 360px) {
+  .opening-animated .opening-photo-frame { width: min(75vw, 270px); }
+  .opening-animated .opening-photo-frame .opening-flower {
+    width: 75px !important;
+  }
+}
+
+
+/* FIX POSISI BUNGA DI LENGKUNG FOTO */
+
+/* Desktop */
+.opening-animated .opening-photo-frame .opening-flower-top {
+  top: 10px !important;
+  left: 20px !important;
+  transform: rotate(8deg) !important;
+}
+
+/* Bunga kanan bawah tetap */
+.opening-animated .opening-photo-frame .opening-flower-bottom {
+  right: -12px !important;
+  bottom: -12px !important;
+  transform: rotate(180deg) !important;
+}
+
+/* Tablet dan HP */
+@media (max-width: 767px) {
+  .opening-animated .opening-photo-frame .opening-flower-top {
+    top: -20px !important;
+    left: -20px !important;
+    width: 110px !important;
+    transform: none !important;
+  }
+
+  .opening-animated .opening-photo-frame .opening-flower-bottom {
+    right: -8px !important;
+    bottom: -8px !important;
+    width: 95px !important;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 380px) {
+  .opening-animated .opening-photo-frame .opening-flower-top {
+    top: -15px !important;
+    left: -15px !important;
+    width: 95px !important;
+  }
+
+  .opening-animated .opening-photo-frame .opening-flower-bottom {
+    width: 95px !important;
+  }
+}
+
+/* =====================================
+   GUNUNGAN JAWA - KEDUA MEMPELAI
+   ===================================== */
+
+.couple-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Background gunungan */
+.couple-section::before {
+  content: "";
+  position: absolute;
+  display: block;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 340px;
+  height: 420px;
+
+  background-image: url("/ornaments/gunungan-gold.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.28;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Sudut kiri bawah */
-.cover-screen .ornamental-gunungan-left {
-  left: 18px;
-  right: auto;
-  transform: none;
-}
-
-/* Sudut kanan bawah */
-.cover-screen .ornamental-gunungan-right {
-  right: 18px;
-  left: auto;
-  transform: scaleX(-1);
-}
-
-/* Konten berada di depan ornamen */
-.cover-screen .cover-content {
+/* Semua konten di atas watermark */
+.couple-section .couple-people {
   position: relative;
   z-index: 2;
 }
 
-/* =========================================
-   LAPTOP / DESKTOP
-   ========================================= */
-
-@media (min-width: 1024px) {
-  .cover-screen .ornamental-gunungan {
-    width: clamp(220px, 19vw, 330px);
-    height: clamp(220px, 19vw, 330px);
-    bottom: 20px;
-    opacity: 0.9;
-  }
-
-  .cover-screen .ornamental-gunungan-left {
-    left: 20px;
-  }
-
-  .cover-screen .ornamental-gunungan-right {
-    right: 20px;
+/* Responsif HP */
+@media (max-width: 767px) {
+  .couple-section::before {
+    top: 52%;
+    width: 220px;
+    height: 290px;
+    opacity: 0.18;
   }
 }
 
-/* =========================================
-   TABLET
-   ========================================= */
 
-@media (min-width: 701px) and (max-width: 1023px) {
-  .cover-screen .ornamental-gunungan {
-    width: 200px;
-    height: 200px;
-    bottom: 18px;
-    opacity: 0.8;
-  }
+/* GUNUNGAN DI TENGAH KEDUA MEMPELAI */
 
-  .cover-screen .ornamental-gunungan-left {
-    left: 18px;
-  }
-
-  .cover-screen .ornamental-gunungan-right {
-    right: 18px;
-  }
+/* Desktop */
+.couple-section .couple-ampersand {
+  position: relative;
+  z-index: 1;
 }
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* HP dan tablet */
+@media (max-width: 767px) {
 
-@media (max-width: 700px) {
-  .cover-screen .ornamental-gunungan {
-    width: clamp(100px, 31vw, 150px);
-    height: clamp(100px, 31vw, 150px);
-
-    bottom: 12px;
-    opacity: 0.8;
+  /* Sembunyikan watermark lama agar tidak dobel */
+  .couple-section::before,
+  .couple-section .couple-gunungan {
+    display: none !important;
   }
 
-  .cover-screen .ornamental-gunungan-left {
-    left: 12px;
+  /* Gunungan tepat di belakang simbol & */
+  .couple-section .couple-ampersand::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 115px;
+    height: 145px;
+
+    background-image: url("/ornaments/gunungan-gold.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: -1;
   }
 
-  .cover-screen .ornamental-gunungan-right {
-    right: 12px;
-  }
-}
-
-/* =========================================
-   HP SANGAT KECIL
-   ========================================= */
-
-@media (max-width: 360px) {
-  .cover-screen .ornamental-gunungan {
-    width: 100px;
-    height: 100px;
-    opacity: 0.7;
+  /* Ruang untuk ornamen */
+  .couple-section .couple-ampersand {
+    position: relative;
+    isolation: isolate;
+    margin: 48px auto;
+    z-index: 2;
   }
 }
